@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAI }) => {
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-bold text-white text-xs">Idrak AI Beauty Advisor</h4>
+              <h4 className="font-bold text-white text-xs">Nahdi AI Beauty Advisor</h4>
               <p className="text-[11px] text-slate-400 mt-0.5">24/7 intelligent skincare routine consultations &amp; ingredient safety analysis.</p>
             </div>
           </div>
@@ -122,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAI }) => {
 
         </div>
 
-        {/* Bottom Bar: Copyright & Payment Badges */}
+        {/* Bottom Bar */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
           <div>
             © 2026 Al Nahdi Medical Company. All rights reserved. Authentic luxury beauty distributor in the Kingdom of Saudi Arabia.

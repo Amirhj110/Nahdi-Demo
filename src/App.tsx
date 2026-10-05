@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { 
   Sparkles, 
-  CheckCircle, 
-  Droplets, 
   ShieldCheck, 
-  HeartHandshake, 
-  Sparkle,
-  SlidersHorizontal,
+  Droplets, 
   Flame,
   Check
 } from 'lucide-react';
@@ -17,7 +13,7 @@ import { Hero } from './components/Hero';
 import { ProductCard } from './components/ProductCard';
 import { ProductQuickView } from './components/ProductQuickView';
 import { CartDrawer } from './components/CartDrawer';
-import { IdrakChatWidget } from './components/IdrakChatWidget';
+import { BeautyAIChatWidget } from './components/BeautyAIChatWidget';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -104,8 +100,7 @@ export default function App() {
     setIsChatOpen(true);
   };
 
-  // Product card "Ask AI About This Product" action:
-  // Strict requirement: Populates a message like "Can you tell me if [Product Name] is safe for sensitive skin?"
+  // Product card "Ask AI About This Product" action
   const handleAskAIAboutProduct = (product: Product) => {
     const question = `Can you tell me if ${product.name} is safe for sensitive skin, and how to best use it in a skincare routine?`;
     handleOpenAIWithQuery(question);
@@ -255,7 +250,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* 6 Luxury Cosmetics Products Grid */}
+          {/* 6 Luxury Cosmetics Products Grid with Real Photos */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {filteredProducts.map((product) => (
               <ProductCard
@@ -278,10 +273,10 @@ export default function App() {
             
             <div className="text-center max-w-2xl mx-auto mb-10">
               <span className="bg-[#E31837]/10 text-[#E31837] text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-wider">
-                Clinical Chemistry
+                Clinical Dermatology
               </span>
               <h3 className="text-2xl font-black text-[#0D2040] mt-2">
-                Decoded by Idrak AI: What Powers Your Skin?
+                Decoded by Nahdi AI: What Powers Your Skin?
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 mt-1">
                 Our AI model is pre-trained with clinical dermatology research to guide you on formulations, concentration thresholds, and daily layering.
@@ -372,8 +367,8 @@ export default function App() {
       {/* Footer */}
       <Footer onOpenAI={handleOpenAIWithQuery} />
 
-      {/* ================= IDRAK CHATBOT WIDGET (Matching idrak.bilyticaglobal.com) ================= */}
-      <IdrakChatWidget
+      {/* ================= NAHDI BEAUTY AI CHATBOT WIDGET (HYBRID TEXT & VOICE) ================= */}
+      <BeautyAIChatWidget
         isOpen={isChatOpen}
         onToggle={(open) => setIsChatOpen(open !== undefined ? open : !isChatOpen)}
         initialQuery={chatInitialQuery}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Sparkles, ShoppingBag, Star, CheckCircle, Shield, Droplets } from 'lucide-react';
+import { X, Sparkles, ShoppingBag, Star } from 'lucide-react';
 import { Product } from '../types';
 
 interface ProductQuickViewProps {
@@ -35,30 +35,19 @@ export const ProductQuickView: React.FC<ProductQuickViewProps> = ({
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {/* Visual Side */}
+          {/* Visual Side with Photo */}
           <div className={`p-8 bg-gradient-to-b ${product.imageBg} flex flex-col items-center justify-center text-center relative border-b md:border-b-0 md:border-r border-slate-100`}>
             <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
               {product.brand} • {product.category}
             </span>
 
-            {/* Stylized cosmetic graphic */}
-            <div className="w-36 h-48 rounded-2xl bg-white/90 shadow-xl border border-white p-4 flex flex-col items-center justify-between my-4 backdrop-blur-xs">
-              <div className="w-10 h-2.5 rounded-t-sm bg-slate-300"></div>
-              <div>
-                <span className="text-xs font-black uppercase tracking-wider text-slate-400 block mb-1">
-                  {product.brand}
-                </span>
-                <div 
-                  className="font-extrabold text-sm uppercase px-1 leading-tight"
-                  style={{ color: product.accentColor }}
-                >
-                  {product.name}
-                </div>
-                <span className="text-[10px] text-slate-500 font-mono mt-1 block">
-                  {product.volume}
-                </span>
-              </div>
-              <div className="w-16 h-1 rounded-full bg-slate-200"></div>
+            {/* High-res Image */}
+            <div className="w-48 h-56 flex items-center justify-center my-2 p-2">
+              <img
+                src={product.imageUrl}
+                alt={product.name}
+                className="max-h-full max-w-full object-contain drop-shadow-xl rounded-2xl"
+              />
             </div>
 
             <div className="flex items-center gap-1 text-amber-500 text-xs font-bold mt-2">

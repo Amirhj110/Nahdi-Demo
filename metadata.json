@@ -1,6 +1,6 @@
 {
   "name": "Nahdi Beauty - Luxury Cosmetics & AI Advisor",
-  "description": "High-end Saudi beauty and skincare destination featuring authentic cosmetics, dermatologist picks, and the Idrak AI Beauty Advisor.",
+  "description": "High-end Saudi beauty and skincare destination featuring authentic cosmetics, dermatologist picks, and the 24/7 Nahdi Beauty AI Advisor.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

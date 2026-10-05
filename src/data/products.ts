@@ -12,14 +12,15 @@ export const BEAUTY_PRODUCTS: Product[] = [
     rating: 4.8,
     reviewCount: 1420,
     volume: '237ml',
-    badge: 'Dermatologist Loved',
+    badge: 'Dermatologist Choice',
     badgeColor: 'bg-emerald-600',
     tagline: 'Restores skin barrier with 3 essential ceramides',
     description: 'Developed with dermatologists, CeraVe Hydrating Cleanser effectively cleanses and hydrates without disrupting the protective skin barrier. Infused with MVE delivery technology, ceramides, and hyaluronic acid.',
     activeIngredients: ['Ceramides 1, 3, 6-II', 'Hyaluronic Acid', 'Glycerin'],
     skinType: 'Normal to Dry, Sensitive Skin',
     imageBg: 'from-emerald-50 via-teal-50 to-white',
-    accentColor: '#059669'
+    accentColor: '#059669',
+    imageUrl: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=700&auto=format&fit=crop&q=80'
   },
   {
     id: 'lrp-anthelios-fluid',
@@ -39,7 +40,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     activeIngredients: ['Mexoryl 400', 'Netlock Technology', 'Thermal Spring Water'],
     skinType: 'All Skin Types, Sensitive & Sun-Allergic Skin',
     imageBg: 'from-sky-50 via-blue-50 to-white',
-    accentColor: '#0284c7'
+    accentColor: '#0284c7',
+    imageUrl: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=700&auto=format&fit=crop&q=80'
   },
   {
     id: 'the-ordinary-niacinamide',
@@ -59,7 +61,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     activeIngredients: ['Niacinamide (Vitamin B3) 10%', 'Zinc PCA 1%', 'Tamarindus Seed Gum'],
     skinType: 'Oily, Combination, Blemish-Prone Skin',
     imageBg: 'from-indigo-50 via-slate-50 to-white',
-    accentColor: '#4f46e5'
+    accentColor: '#4f46e5',
+    imageUrl: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=700&auto=format&fit=crop&q=80'
   },
   {
     id: 'vichy-mineral-89',
@@ -79,7 +82,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     activeIngredients: ['89% Vichy Volcanic Water', 'Natural Hyaluronic Acid', '15 Essential Minerals'],
     skinType: 'All Skin Types, Dehydrated Skin',
     imageBg: 'from-cyan-50 via-blue-50 to-white',
-    accentColor: '#0e7490'
+    accentColor: '#0e7490',
+    imageUrl: 'https://images.unsplash.com/photo-1608248597359-00994f836968?w=700&auto=format&fit=crop&q=80'
   },
   {
     id: 'bioderma-sensibio-h2o',
@@ -99,7 +103,8 @@ export const BEAUTY_PRODUCTS: Product[] = [
     activeIngredients: ['Micellar Fatty Acid Esters', 'Cucumber Extract', 'Mannitol'],
     skinType: 'Sensitive, Reactive & Redness-Prone Skin',
     imageBg: 'from-rose-50 via-pink-50 to-white',
-    accentColor: '#e11d48'
+    accentColor: '#e11d48',
+    imageUrl: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=700&auto=format&fit=crop&q=80'
   },
   {
     id: 'maybelline-sky-high-mascara',
@@ -119,6 +124,7 @@ export const BEAUTY_PRODUCTS: Product[] = [
     activeIngredients: ['Bamboo Extract', 'Extending Fibers', 'Mineral Pigments'],
     skinType: 'All Eye Types, Contact Lens Safe',
     imageBg: 'from-fuchsia-50 via-pink-50 to-white',
-    accentColor: '#a21caf'
+    accentColor: '#a21caf',
+    imageUrl: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=700&auto=format&fit=crop&q=80'
   }
 ];

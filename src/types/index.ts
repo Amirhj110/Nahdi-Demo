@@ -17,6 +17,7 @@ export interface Product {
   skinType: string;
   imageBg: string;
   accentColor: string;
+  imageUrl: string;
 }
 
 export interface CartItem {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ShoppingBag, Star, ShieldCheck, Heart, Eye } from 'lucide-react';
+import { Sparkles, ShoppingBag, Star, Heart, Eye } from 'lucide-react';
 import { Product } from '../types';
 
 interface ProductCardProps {
@@ -23,7 +23,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     <div className="bg-white rounded-3xl border border-slate-200/80 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden group">
       
       {/* Product Image & Badges Banner */}
-      <div className={`relative h-60 bg-gradient-to-b ${product.imageBg} p-6 flex flex-col items-center justify-center border-b border-slate-100 overflow-hidden`}>
+      <div className={`relative h-64 bg-gradient-to-b ${product.imageBg} p-4 flex flex-col items-center justify-center border-b border-slate-100 overflow-hidden`}>
         
         {/* Floating Badges */}
         <div className="absolute top-3.5 left-3.5 flex flex-col gap-1.5 z-10">
@@ -55,37 +55,22 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </button>
         </div>
 
-        {/* Visual Graphic Representation */}
+        {/* Real Crisp Product Photograph */}
         <div 
           onClick={() => onQuickView(product)}
-          className="cursor-pointer relative z-0 flex flex-col items-center justify-center group-hover:scale-105 transition-transform duration-300"
+          className="cursor-pointer relative z-0 w-full h-full flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300"
         >
-          {/* Stylized cosmetic bottle silhouette */}
-          <div className="w-28 h-36 rounded-2xl bg-white/90 border border-white/80 shadow-md flex flex-col items-center justify-between p-3.5 relative overflow-hidden backdrop-blur-xs">
-            <div className="w-8 h-2 rounded-t-sm bg-slate-300"></div>
-            
-            <div className="text-center my-auto">
-              <span className="text-[10px] font-black tracking-widest uppercase text-slate-400 block mb-0.5">
-                {product.brand}
-              </span>
-              <div 
-                className="font-bold text-xs uppercase tracking-tight line-clamp-2 px-1"
-                style={{ color: product.accentColor }}
-              >
-                {product.name.split(' ').slice(1, 3).join(' ')}
-              </div>
-              <span className="text-[9px] text-slate-500 block mt-1 font-mono">
-                {product.volume}
-              </span>
-            </div>
-
-            <div className="w-12 h-1 rounded-full bg-slate-200"></div>
-          </div>
+          <img
+            src={product.imageUrl}
+            alt={product.name}
+            className="max-h-48 max-w-full object-contain drop-shadow-md rounded-xl"
+            loading="lazy"
+          />
         </div>
 
         {/* Active ingredients chip at bottom of image area */}
         <div className="absolute bottom-2 inset-x-3 flex justify-center">
-          <span className="text-[10px] text-slate-500 bg-white/80 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-slate-200/60 truncate max-w-full">
+          <span className="text-[10px] text-slate-600 bg-white/90 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-slate-200/80 truncate max-w-full shadow-2xs font-medium">
             {product.activeIngredients.slice(0, 2).join(' • ')}
           </span>
         </div>
@@ -141,10 +126,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </span>
           </div>
 
-          {/* REQUIRED PRODUCT CARD ACTIONS:
-              1. Add to Basket
-              2. "Ask AI About This Product" button that auto-opens Idrak chatbot
-          */}
+          {/* Product Card Actions */}
           <div className="grid grid-cols-1 gap-2">
             <button
               onClick={() => onAddToCart(product)}
@@ -154,10 +136,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               <span>Add to Basket</span>
             </button>
 
-            {/* Strict requirement: Every product card must feature an "Ask AI About This Product" button */}
+            {/* "Ask AI About This Product" button */}
             <button
               onClick={() => onAskAI(product)}
-              title={`Consult Idrak AI about ${product.name}`}
+              title={`Ask AI about ${product.name}`}
               className="w-full bg-gradient-to-r from-rose-50 to-rose-100/60 hover:from-[#E31837] hover:to-rose-600 text-[#E31837] hover:text-white border border-rose-200/90 hover:border-transparent py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all duration-200 cursor-pointer shadow-xs group/btn"
             >
               <Sparkles className="w-3.5 h-3.5 text-amber-500 group-hover/btn:text-amber-300 group-hover/btn:rotate-12 transition-transform" />

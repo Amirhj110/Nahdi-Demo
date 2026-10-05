@@ -10,7 +10,8 @@ import {
   User, 
   ShieldCheck, 
   Truck,
-  Flame
+  Flame,
+  Radio
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -53,7 +54,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="sticky top-0 z-30 bg-white shadow-xs">
-      {/* ================= 1. LUXURY TOP ANNOUNCEMENT BAR ================= */}
+      {/* 1. Top Announcement Bar */}
       <div className="bg-[#0D2040] text-white text-[11px] py-2 px-4 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
           
@@ -95,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* ================= 2. MAIN BRAND HEADER ================= */}
+      {/* 2. Main Brand Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
         
         {/* Brand Logo (Nahdi Beauty) */}
@@ -155,7 +156,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </form>
         </div>
 
-        {/* Header Actions: AI Skin Advisor, Account, Wishlist, Cart */}
+        {/* Header Actions */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           
           {/* Quick AI Skin Consultation Pill */}
@@ -163,8 +164,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => onOpenAI("Can you help me design an AM and PM skincare routine for glowing skin?")}
             className="hidden md:flex items-center gap-1.5 bg-rose-50 hover:bg-rose-100 text-[#E31837] border border-rose-200 px-3 py-2 rounded-xl text-xs font-bold transition-colors cursor-pointer"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#E31837]" />
-            <span>AI Skin Advisor</span>
+            <Radio className="w-3.5 h-3.5 text-[#E31837] animate-pulse" />
+            <span>AI Voice &amp; Chat</span>
           </button>
 
           {/* User Sign In */}
@@ -197,7 +198,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       </div>
 
-      {/* ================= 3. LUXURY CATEGORY NAVIGATION ================= */}
+      {/* 3. Category Navigation */}
       <nav className="border-t border-slate-100 bg-white/95 backdrop-blur-xs overflow-x-auto scrollbar-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 sm:gap-4 py-2 text-xs font-semibold whitespace-nowrap">
           <div className="flex items-center gap-1 text-[#E31837] font-bold mr-2">
@@ -227,7 +228,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="ml-auto hidden lg:flex items-center gap-1.5 text-xs font-bold text-[#E31837] hover:underline cursor-pointer"
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-            <span>Consult Idrak AI Beauty Pharmacist →</span>
+            <span>Consult Nahdi AI Beauty Pharmacist →</span>
           </button>
         </div>
       </nav>
