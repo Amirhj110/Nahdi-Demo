@@ -1,30 +1,23 @@
-import { defineConfig, loadEnv, type UserConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { v3IdrakProxyPlugin } from './server/v3-idrak-proxy-plugin.ts'
+import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+import {defineConfig} from 'vite';
 
-const rootDir = path.dirname(fileURLToPath(import.meta.url))
-
-export default defineConfig(({ mode }): UserConfig => {
-  const env = loadEnv(mode, rootDir, '')
+export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss(), v3IdrakProxyPlugin(env, rootDir)],
-    envDir: rootDir,
-    envPrefix: 'VITE_',
+    base: '/Nahdi-Demo/',
+    plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve(rootDir, 'src'),
+        '@': path.resolve(__dirname, '.'),
       },
     },
     server: {
-      port: 5173,
-      strictPort: true,
+      // HMR is disabled in AI Studio via DISABLE_HMR env var.
+      // Do not modify—file watching is disabled to prevent flickering during agent edits.
+      hmr: process.env.DISABLE_HMR !== 'true',
+      // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
+      watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
-    preview: {
-      port: 4173,
-      strictPort: true,
-    },
-  }
-})
+  };
+});
